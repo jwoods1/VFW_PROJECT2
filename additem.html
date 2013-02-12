@@ -1,0 +1,68 @@
+<!doctype html>
+<!-- Woods Jason VFW 1302 Project web app 1-->
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="keywords" content="Insurance,Agent,Client,Tracker"/>
+		<meta name="description" content="Full Sail VFW Project 1" />
+		<meta name="robots" content="index, Follow" />
+		<meta name="viewport" content="user-scalable=no, width=device-width" />
+		<meta name="HandheldFriendly" content="True" />
+		<meta name="MobileOptimized" content="320" />
+		<title>Insurance Agent Client Tracker</title>
+	</head>
+	<body>
+		<header>
+			<h1>Agent Client list</h1>
+		</header>
+		<h2>Client Info</h2>
+		
+		<form action="#" method="post"id="NewClient">
+			<!--Client ifo here-->
+			<fieldset>
+				<legend>Add Client</legend>
+				<ul id="Clientinfo">
+					<li><label for="Name">Client's first Name:</label><input type="text" id="Name" /></li>
+					<li><label for="Lname">Client's Last Name:</label><input type="text" id="Lname" /></li>
+					<li><label for="email">Clients's Email:</label><input type="email" id="email" placeholder="ClientEmailhere@mail.com"></li>
+				</ul>
+			</fieldset>
+			<!--Client Policy here-->
+			<fieldset>
+				<legend>Clients Policies</legend>
+				<ul id="Policies">
+					<li>
+						<label for="Company">Select Insurance Company</label><br>
+						<select id="Company">
+							<optgroup label="Company">
+								<option value="American Mod">American Mod</option>
+								<option value="Farmers">Farmers</option>
+								<option value="State Farm">State Farm</option>
+								<option value="Progressive">Progressive</option>
+							</optgroup>
+						</select>
+					</li>	
+			
+					<li>Insurance Policies:
+						<ul id="NumPolicies">
+							<li><input type="checkbox" value="Auto" id="auto" /><label for="auto">Auto</label></li>
+							<li><input type="checkbox" value="Car" id="car" /><label for="car">Car</label></li>
+							<li><input type="checkbox" value="Motorcycle" id="motorcycle" /><label for="motorcycle">Motorcycle</label></li>
+							<li><input type="checkbox" value="RV" id="rv" /><label for="rv">RV</label></li>
+							<li><label for="AutoNum">Number of Vehicles</label><input type="range" onchange="autoNum" value="0" max="10" min="0" id="AutoNum" /></li>
+							<li><input type="checkbox" value="Home" id="home" /><label for="home">Home Owners</label></li>
+							<li><input type="checkbox" value="Rent" id="rent" /><label for="rent">Renters</label></li>
+							<li><input type="checkbox" value="Life" id="life" /><label for="life">Life</label></li>
+						</ul>
+					</li>
+					<li><label for="Comments">Additional Info</label><textarea id="Comments"></textarea></li>
+					<li><label for="renew">Renewal Date</label><input type="date" min="2013-01-01" max="2020-01-01" id="renew" name="renew" />
+				</ul>
+				<input  type="hidden" name="clientID" id="random number" />
+			</fieldset>
+			<input type="submit" value="Create Client" />
+		</form>
+		<a href="#">Clear Stored Data</a>
+		<a href="#">Display Data</a>
+	</body>
+</html>
