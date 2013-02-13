@@ -9,6 +9,7 @@
 		<meta name="viewport" content="user-scalable=no, width=device-width" />
 		<meta name="HandheldFriendly" content="True" />
 		<meta name="MobileOptimized" content="320" />
+		<link rel="stylesheet" type="text/css" href="css/Agent.css" />
 		<title>Insurance Agent Client Tracker</title>
 	</head>
 	<body>
@@ -46,13 +47,16 @@
 					<li>Insurance Policies:
 						<ul id="NumPolicies">
 							<li><input type="checkbox" value="Auto" id="auto" /><label for="auto">Auto</label></li>
-							<li><input type="checkbox" value="Car" id="car" /><label for="car">Car</label></li>
-							<li><input type="checkbox" value="Motorcycle" id="motorcycle" /><label for="motorcycle">Motorcycle</label></li>
-							<li><input type="checkbox" value="RV" id="rv" /><label for="rv">RV</label></li>
-							<li><label for="AutoNum">Number of Vehicles</label><input type="range" onchange="autoNum" value="0" max="10" min="0" id="AutoNum" /></li>
+							<ul id="auto">
+								<li><input type="checkbox" value="Car" id="car" /><label for="car">Car</label></li>
+								<li><input type="checkbox" value="Motorcycle" id="motorcycle" /><label for="motorcycle">Motorcycle</label></li>
+								<li><input type="checkbox" value="RV" id="rv" /><label for="rv">RV</label></li>
+								<li><label for="AutoNum">Number of Vehicles</label><input type="range" onchange="autoNum" value="0" max="10" min="0" id="AutoNum" /></li>
+							</ul>
 							<li><input type="checkbox" value="Home" id="home" /><label for="home">Home Owners</label></li>
 							<li><input type="checkbox" value="Rent" id="rent" /><label for="rent">Renters</label></li>
 							<li><input type="checkbox" value="Life" id="life" /><label for="life">Life</label></li>
+
 						</ul>
 					</li>
 					<li><label for="Comments">Additional Info</label><textarea id="Comments"></textarea></li>
@@ -65,4 +69,5 @@
 		<a href="#">Clear Stored Data</a>
 		<a href="#">Display Data</a>
 	</body>
+	<a href=
 </html>

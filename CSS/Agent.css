@@ -1,0 +1,28 @@
+/*
+Woods Jason
+VFW 1302 
+Project 2
+CSS
+*/
+
+h1 {
+	
+	border: 5px solid #000;
+	margin: 2% 5% 2% 2%;
+	padding: 1% 1% 1% 5%;
+	background:white;
+	width: 90%;
+	font-style: italic;
+	color:gray;
+}
+
+body{
+	background-color: #cccccc;
+	border: 2px solid #666;
+	width: 90%;
+	margin: 2% 2% 2% 2%;
+	padding:2% 2% 2% 2%;
+}
+label{
+	display:block;
+}
