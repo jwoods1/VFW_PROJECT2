@@ -9,7 +9,7 @@
 		<meta name="viewport" content="user-scalable=no, width=device-width" />
 		<meta name="HandheldFriendly" content="True" />
 		<meta name="MobileOptimized" content="320" />
-		<link rel="stylesheet" type="text/css" href="css/Agent.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
 		<title>Insurance Agent Client Tracker</title>
 	</head>
 	<body>
@@ -46,18 +46,18 @@
 			
 					<li>Insurance Policies:
 						<ul id="NumPolicies">
-							<li><input type="checkbox" value="Auto" id="auto" /><label for="auto">Auto</label></li>
+							<li><label for="auto">Auto</label><input type="checkbox" value="Auto" id="auto" /></li>
 							<li><label for="Pnum">Policy Number:</label><input type="text" id="Pnum" /></li>
 							<li><label for="AutoNum">Number of Vehicles</label><input type="range" onchange="autoNum" value="0" max="10" min="0" id="AutoNum" /></li>
-							<li><input type="checkbox" value="Motorcycle" id="motorcycle" /><label for="motorcycle">Motorcycle</label></li>
+							<li><label for="motorcycle">Motorcycle</label><input type="checkbox" value="Motorcycle" id="motorcycle" /></li>
 							<li><label for="Pnum">Policy Number:</label><input type="text" id="Pnum" /></li>
-							<li><input type="checkbox" value="RV" id="rv" /><label for="rv">RV</label></li>
+							<li><label for="rv">RV</label><input type="checkbox" value="RV" id="rv" /></li>
 							<li><label for="Pnum">Policy Number:</label><input type="text" id="Pnum" /></li>
-							<li><input type="checkbox" value="Home" id="home" /><label for="home">Home Owners</label></li>
+							<li><label for="home">Home Owners</label><input type="checkbox" value="Home" id="home" /></li>
 							<li><label for="Pnum">Policy Number:</label><input type="text" id="Pnum" /></li>
-							<li><input type="checkbox" value="Rent" id="rent" /><label for="rent">Renters</label></li>
+							<li><label for="rent">Renters</label><input type="checkbox" value="Rent" id="rent" /></li>
 							<li><label for="Pnum">Policy Number:</label><input type="text" id="Pnum" /></li>
-							<li><input type="checkbox" value="Life" id="life" /><label for="life">Life</label></li>
+							<li><label for="life">Life</label><input type="checkbox" value="Life" id="life" /></li>
 							<li><label for="Pnum">Policy Number:</label><input type="text" id="Pnum" /></li>
 						</ul>
 					</li>
@@ -68,9 +68,9 @@
 			</fieldset>
 			<input type="Button" value="Create Client" id="myButton" />
 		</form>
-		<a href="#">Clear Stored Data</a>
-		<a href="#">Display Data</a>
-	<script src="JS/Agent.js" type="text/javascript"></script>
+		<a href="#"id="ClearStoredData">Clear Stored Data</a>
+		<a href="#" id="DisplayData">Display Data</a>
+	<script src="JS/main.js" type="text/javascript"></script>
 	</body>
 	<a href=
 </html>
