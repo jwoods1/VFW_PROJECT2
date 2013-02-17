@@ -106,37 +106,76 @@ window.addEventListener("DOMContentLoaded", function(){
 		localStorage.setItem(id, JSON.stringify(item));
 		alert("Contact Saved");
 
+	};
+	function toggleControls(n){
+		switch(n){
+			case "on":
+				$("NewClient").style.display = "none";
+				$("clear").style.display = "inline";
+				$("DisplayData").style.display = "none";
+				$("myButton").style.display = "inline";
+				break;
+			case "off":
+				$("NewClient").style.display = "block";
+				$("clear").style.display = "inline";
+				$("DisplayData").style.display = "inline";
+				$("myButton").style.display = "none";
+				$("items").style.display = "none";
+				break;
+			default:
+				return false;
+		}
 	}
-	function getData(){
+
+
+
+	function getLocal(){
+		toggleControls("on")
+		if(localStorage.lenght === 0){
+			alert("there is no data in Local Storage.");
+		};
 		var makeDiv = document.createElement("div");
-		makeDiv.setAttribute("id", "Items");
+		makeDiv.setAttribute("id", "items");
 		var makeList = document.createElement("ul");
 		makeDiv.appendChild(makeList);
 		document.body.appendChild(makeDiv);
-		for(var i=0, len=localStorage.lenght; i<len;i++){
-			var makeLi = document.createElement("li");
-			makeList.appendChild(makeLi);
-			var key = localStorage.key[i];
-			var value = localStorage.getItem(key);
+		$("items").style.display = "block";
+		for(var i=0, j=localStorage.length; i<j; i++) {
+			var makeli = document.createElement("li");
+			makeList.appendChild(makeli);
+			var Key = localStorage.key(i);
+			var value = localStorage.getItem(Key);
 			//convert the string from local storage value back to an Object by useing JSON.parse()
-			var saved = JSON.parse(value);
-			var makeSubLi = document.createElement("ul");
-			makeLi.appendChild(makeSubLi);
-			for(var n in saved){
-				var makeSublist = document.createElement("li");
-				makeSubLi.appendChild(makeSublist);
-				var optSubText = saved[n][0]+" "+saved[n][1];
-				makeSublist.innerHTML = optSubText;
+			var lObj = JSON.parse(value);
+			var createSubList = document.createElement("ul");
+			makeli.appendChild(createSubList);
+			for(var n in lObj){
+				var createSubli = document.createElement("li");
+				createSubList.appendChild(createSubli);
+				var optSubText = lObj[n][0]+" "+lObj[n][1];
+				createSubli.innerHTML = optSubText;
 			}
+		}
+	}
+
+	function clearLocal(){
+		if(localStorage.length === 0){
+			alert("There is no data to clear.")
+
+		}else{
+			localStorage.clear();
+			alert("All Clients are deleted!")
+			window.location.reload();
+			return false;
 		}
 	}
 	var companies = ["--Select Company--", "American Mod", "Farmers", "State Farm", "Progressive","All State", "Nation Wide"];
 	makeComps();
 	//set link
 	var displayDataLink = $("DisplayData");
-		displayDataLink.addEventListener("click", getData);
-	var clearDataLink = $("ClearStoredData");
-		//clearDataLink.addEventListener("click", clearlocal);
+	displayDataLink.addEventListener("click", getLocal);
+	var clearDataLink = $("clear");
+	clearDataLink.addEventListener("click", clearLocal);
 	var saveData = $("myButton");
 	saveData.addEventListener("click", storeData);
 });
